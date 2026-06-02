@@ -18,25 +18,25 @@ const skillCards = [
 const skillGroups = [
   {
     label: "Languages",
-    items: ["Python", "JavaScript", "TypeScript", "SQL", "Java", "HTML/CSS"],
+    items: ["Python", "JavaScript", "SQL", "Java", "HTML/CSS", "C"],
   },
   {
     label: "Frameworks",
-    items: ["React", "Tailwind", "Vite", "Node.js", "Express"],
+    items: ["React", "Tailwind", "Vite"],
   },
   {
     label: "Databases & Cloud",
-    items: ["PostgreSQL", "Supabase", "Firebase", "Vercel"],
+    items: ["PostgreSQL", "Supabase", "Vercel"],
   },
   {
     label: "Tools",
-    items: ["Git", "GitHub", "VS Code", "npm"],
+    items: ["GitHub", "VS Code", "Microsoft 365", "Excel"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section className="relative py-20 px-6 bg-black text-white overflow-hidden">
+    <section className="relative py-20 px-6 text-white overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
 
         {/* CARDS */}

@@ -75,56 +75,56 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.button
-              type="button"
-              key={project.title}
-              onClick={() => setSelectedProject(project)}
-              initial={{ opacity: 0, y: 80, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true, amount: 0.25 }}
-              whileHover={{ y: -12, scale: 1.02 }}
-              className="group text-left rounded-[1.75rem] border border-white/10 bg-white/[0.04] overflow-hidden backdrop-blur-xl shadow-2xl"
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
+  {projects.map((project, index) => (
+    <motion.button
+      type="button"
+      key={project.title}
+      onClick={() => setSelectedProject(project)}
+      initial={{ opacity: 0, y: 80, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.15,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true, amount: 0.25 }}
+      whileHover={{ y: -12, scale: 1.02 }}
+      className="group h-full flex flex-col text-left rounded-[1.75rem] border border-white/10 bg-white/[0.04] overflow-hidden backdrop-blur-xl shadow-2xl"
+    >
+      <div className="h-36 bg-gradient-to-br from-purple-500/30 to-blue-500/20 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-3xl group-hover:scale-110 transition">
+          {project.icon}
+        </div>
+      </div>
+
+      <div className="p-7 flex flex-col flex-grow">
+        <p className="text-xs uppercase tracking-[0.25em] text-purple-300 font-bold mb-3">
+          {project.date}
+        </p>
+
+        <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-200 transition">
+          {project.title}
+        </h3>
+
+        <p className="text-gray-300 leading-relaxed mb-8 flex-grow">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          {project.tech.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-2 rounded-full text-xs text-purple-200 bg-white/5 border border-white/10"
             >
-              <div className="h-36 bg-gradient-to-br from-purple-500/30 to-blue-500/20 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-3xl group-hover:scale-110 transition">
-                  {project.icon}
-                </div>
-              </div>
-
-              <div className="p-7">
-                <p className="text-xs uppercase tracking-[0.25em] text-purple-300 font-bold mb-3">
-                  {project.date}
-                </p>
-
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-200 transition">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-300 leading-relaxed mb-8">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-3">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-2 rounded-full text-xs text-purple-200 bg-white/5 border border-white/10"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.button>
+              {tech}
+            </span>
           ))}
         </div>
+      </div>
+    </motion.button>
+  ))}
+</div>
       </div>
 
       <AnimatePresence>
